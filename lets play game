@@ -1,0 +1,22 @@
+import random
+
+players = ['Red', 'Green', 'Blue', 'Yellow']
+
+def roll_dice():
+    return random.randint(1, 6)
+
+def play_turn(player):
+    input(f"\n🎲 {player}'s turn! Press Enter to roll the dice...")
+    dice = roll_dice()
+    print(f"{player} rolled a {dice}")
+    if dice == 6:
+        print("You get another turn! 🎉")
+        play_turn(player)
+
+def play_game():
+    print("🎯 Welcome to the Ludo Dice Roller!")
+    while True:
+        for player in players:
+            play_turn(player)
+
+play_game()
